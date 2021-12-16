@@ -13,7 +13,7 @@ next.addEventListener('click', () => {
 })
 var myContainer = document.getElementById('myQuestions')
 //Start the game
-//Hide the start button after pressing start, then display the first question
+//Hide the start button after pressing start, remove first question from container, then display the first question
 function startGame() {
         start.classList.add('hide')
         questionOrder = questions.sort()
@@ -21,7 +21,11 @@ function startGame() {
         myContainer.classList.remove('hide')
         nextQ()
 }
-//Call reset which hides the current page and displays the next question
+//Recalibrate the page so there is no background color
+//Hide the next button
+//Display next question and answers related to said question
+//https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
+//https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
 function nextQ() {
         document.body.classList.remove('correct')
         document.body.classList.remove('wrong')
@@ -40,6 +44,7 @@ var myAnswers = document.getElementById('myButtons')
 function showQuestion(question) {
         myQuestions.innerText = question.question
         question.answers.forEach(answer => {
+                //https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
                 var button = document.createElement('button')
                 button.innerText = answer.text
                 button.classList.add('btn')
@@ -47,11 +52,13 @@ function showQuestion(question) {
                         button.dataset.correct = answer.correct
                 }
                 button.addEventListener('click', selectAnswer)
+                //https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
                 myAnswers.appendChild(button)
         })
 }
 //Choose answer, if we reach the final question it displays a prompt asking to play again
 //If not then we move onto next question and next is hidden
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 function selectAnswer(x) {
         var choice = x.target
         var correct = choice.dataset.correct
