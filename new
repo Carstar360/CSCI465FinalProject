@@ -55,7 +55,8 @@ function selectAnswer(x) {
         statusSet(document.body, correct)
         if (8 > index + 1) {
                 nextButton.classList.remove('hide')
-        } else {
+        } 
+        else {
                 startButton.innerText = 'Would you like to Play Again?'
                 startButton.classList.remove('hide')
                 index = 0
@@ -68,7 +69,8 @@ function statusSet(element, correct) {
         element.classList.remove('wrong')
         if (correct) {
                 element.classList.add('correct')
-        } else {
+        } 
+        else {
                 element.classList.add('wrong')
         }
 }
