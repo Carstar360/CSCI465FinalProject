@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <link href="../css/pagestyle.css" rel="stylesheet">
+                <link href="quiz.css" rel="stylesheet">
+                <script defer src="script.js"></script>
+                <title>MCU Quiz App</title>
+        </head>
+        <style>
+        #question {
+                text-align: center;
+                font-size: 50px;
+        }
+
+        .btn {
+                font-size: 30px;
+        }
+        </style>
+
+        <body>
+                <nav>
+                <div class="wrapper">
+                        <ul>
+                                <li><a href="../menu.html">Home</a></li>
+                                <li><a href="quiz.html">Play</a></li>
+                                <li><a href="../comment.html">Guide</a></li>
+                                <li><a href="../chatroom.html">Global Chat</a></li>
+                                <li><a href="../howto.html">How to Play</a></li>
+                                <li><a href="../lead_submit.html">Leaderboard</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                                <li><a href="../index.html">Log Out</a></li>
+                        </ul>
+                </div>
+                </nav>
+                <body id="app">
+                        <div class="container">
+                                <div id="myQuestions" class="hide">
+                                        <div id="curQuestion">Question</div>
+                                        <div id="myButtons" class="btn-grid">
+                                                <button class="btn">Answer 1</button>
+                                                <button class="btn">Answer 2</button>
+                                        </div>
+                                </div>
+                                <div class="controls">
+                                        <button id="start" class="start-btn btn">Start</button>
+                                        <button id="next" class="next-btn btn hide">Next</button>
+                                </div>
+                        </div>
+                </body>
+        </body>
+
+</html>
