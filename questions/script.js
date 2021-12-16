@@ -30,6 +30,7 @@ function nextQ() {
         document.body.classList.remove('correct')
         document.body.classList.remove('wrong')
         next.classList.add('hide')
+        //While myAnswers has "children" or more answers, remove the next set of answers
         while (myAnswers.firstChild) {
                 myAnswers.removeChild(myAnswers.firstChild)
         }
@@ -60,7 +61,10 @@ function showQuestion(question) {
 //If not then we move onto next question and next is hidden
 //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 function selectAnswer(x) {
+        //The button we selected
         var choice = x.target
+        //Whether it's correct or not
+        //https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
         var correct = choice.dataset.correct
         curStatus(document.body, correct)
         if (8 > index + 1) {
