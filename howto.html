@@ -1,3 +1,4 @@
+//Simple template display function from https://www.w3schools.com/tags/tag_template.asp
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,16 @@
                 text-shadow: 1px 1px 1px red,
                              2px 2px 1px red;
         }
+        h2 {
+                text-align: center;
+                font-size: 30px;
+                padding-top: 20px;
+                padding-bottom: 30px;
+                font-family: 'Arial';
+                text-decoration: underline;
+                text-shadow: 1px 1px 1px red,
+                2px 2px 1px red;
+        }
         p {
                 text-align: left;
                 padding-top: 20px;
@@ -45,12 +56,33 @@
                 </div>
         </nav>
         <div class="wrapper">
-                <h4>How to Play</h4>
-                <div class="videowrapper">
-                        <iframe src="https://www.youtube.com/embed/S0qjK3TWZE8"
-                        frameborder="0" allowfullscreen></iframe>
+                        <h4>How to Play</h4>
+                        <div class="videowrapper">
+                                <iframe src="https://www.youtube.com/embed/S0qjK3TWZE8"
+                                        frameborder="0" allowfullscreen></iframe>
+                        </div>
+                </div>
+                <div class="wrapper">
+                        <button onclick="show()">Show Game Tips</button>
+                        <template>
+                                <h2>Game Hints</h2>
+                                <p>Don't overthink it<br>
+                                   Use the guide to help you answer<br>
+                                   Some questions require a different thought process<br>
+                                   The more raunchy or villainous characters are easy<br>
+                                   Same goes for the true heroes<br>
+                                   Put yourself in their shoes<br></p>
+                                   <br><br><br><br><br><br><br><br><br>
+                        </template>
+                        <script>
+                                function show() {
+                                        var temp = document.getElementsByTagName("template")[0];
+                                        var clon = temp.content.cloneNode(true);
+                                        document.body.appendChild(clon);
+                                }
+                        </script>
                 </div>
                 <br><br><br><br><br><br><br><br><br>
-       </div>
-</body>
+        </body>
 </html>
+                                  
